@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Jogo da Forca</h1>
+
+        <div class="category-selection">
+            <label for="category">Escolha uma categoria:</label>
+            <select id="category">
+                <option value="objetos">Objetos</option>
+                <option value="animais">Animais</option>
+                <option value="frutas">Frutas</option>
+            </select>
+            <button onclick="startGame()">Iniciar Jogo</button>
+        </div>
+
+        <div class="game-info">
+            <p>Categoria: <span id="category-name"></span></p>
+            <p>Palavra Oculta: <span id="hidden-word"></span></p>
+            <p>Tentativas restantes: <span id="wrong-tries">6</span></p>
+            <div id="hangman">
+                <img src="forca0.png" alt="Forca" id="hangman-image">
+            </div>
+            <p>Letras Tentadas: <span id="tried-letters">Nenhuma</span></p>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="letter-input" maxlength="1" placeholder="Digite uma letra" disabled>
+            <button onclick="guessLetter()">Tentar Letra</button>
+            <button onclick="guessWord()">Tentar Palavra</button>
+        </div>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
